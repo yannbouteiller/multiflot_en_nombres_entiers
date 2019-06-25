@@ -1,0 +1,16 @@
+Programme écrit par Yann Bouteiller pour le projet C ISMIN 1A 2016.
+
+*** Compilation / Execution ***
+
+En console :
+make clean
+make
+./multiflot
+
+*** Quelques précisions à propos du programme ***
+
+- Ce programme est écrit pour la résolution du problème de multiflots en nombres entiers avec les instances générées par mnetgen.
+- Mnetgen génère des instances de graphes à capacités non entières. Ces capacités sont tronquées en nombres entiers pour notre cas.
+- Le graphe est principalement stocké dans une matrice d'incidence allouée dynamiquement. Afin de préserver l'espace mémoire, cette matrice ne contient que des pointeurs, égaux à NULL si l'arc n'existe pas.
+- Mnetgen génère des arcs multiples. La matrice d'incidence pointe donc vers des tableaux d'arcs, représentant ces arcs multiples.
+- L'algorithme de Busacker et Gowen génère de nombreux graphes d'écart. Afin de ne pas perdre de temps de calcul en allocation et destruction de ces graphes, une zone mémoire supérieure à la taille maximale d'un graphe d'écart leur est allouée au début du programme.
